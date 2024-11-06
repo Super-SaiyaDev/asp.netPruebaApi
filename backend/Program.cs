@@ -1,7 +1,17 @@
 using Microsoft.EntityFrameworkCore;
 using usuariosData.Data;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Configure Serilog
+Log.Logger = new LoggerConfiguration()
+    .ReadFrom.Configuration(builder.Configuration)
+    .Enrich.FromLogContext()
+    .WriteTo.Console()
+    .CreateLogger();
+
+builder.Host.UseSerilog();
 
 // Add services to the container.
 builder.Services.AddDbContext<ApiDbContext>(options =>
@@ -20,13 +30,15 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI(c =>
     {
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "usuarios");
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Products API");
         c.RoutePrefix = string.Empty; // Set Swagger UI at the app's root
     });
 }
 
 app.UseHttpsRedirection();
 app.UseAuthorization();
+
+app.UseMiddleware<ExceptionMiddleware>();
 
 app.MapControllers();
 
@@ -36,6 +48,9 @@ try
 }
 catch (Exception ex)
 {
-    // Log the exception (you can use a logging framework like Serilog, NLog, etc.)
-    Console.WriteLine($"An error occurred while starting the application: {ex.Message}");
+    Log.Fatal(ex, "An error occurred while starting the application");
+}
+finally
+{
+    Log.CloseAndFlush();
 }

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>SONRISA PERFECTA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 5;
+            padding: 10;
+            background-color: #f4f4f4; }
+        header {
+            background-color: #155e88;
+            color: white;
+            padding: 1em;
+            text-align: center;}
+       
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            width: 100%;
+            bottom: 0;}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>bIENVENIDOS A SONRISA PERFECTA</h1>
+    </header>
+  
+            <h2>Courses</h2>
+            <p>REALIZA UNA CITA HOY!</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 All rights reserved.</p>
+    </footer>
+</body>
+</html>

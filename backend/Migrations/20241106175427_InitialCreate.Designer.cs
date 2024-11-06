@@ -12,7 +12,7 @@ using usuariosData.Data;
 namespace api_elearning.Migrations
 {
     [DbContext(typeof(ApiDbContext))]
-    [Migration("20241024183948_InitialCreate")]
+    [Migration("20241106175427_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -42,7 +42,6 @@ namespace api_elearning.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<int>("Rol")
-                        .HasMaxLength(250)
                         .HasColumnType("int");
 
                     b.Property<string>("Username")

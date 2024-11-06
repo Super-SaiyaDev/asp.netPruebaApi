@@ -142,3 +142,12 @@ C:\Users\LAB 2\Desktop\GitHub\api-elearning\backend\bin\Debug\net8.0\Newtonsoft.
 C:\Users\LAB 2\Desktop\GitHub\api-elearning\backend\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
 C:\Users\LAB 2\Desktop\GitHub\api-elearning\backend\obj\Debug\net8.0\api-elearning.RazorAssemblyInfo.cache
 C:\Users\LAB 2\Desktop\GitHub\api-elearning\backend\obj\Debug\net8.0\api-elearning.RazorAssemblyInfo.cs
+C:\Users\LAB 2\Desktop\GitHub\api-elearning\backend\bin\Debug\net8.0\Serilog.dll
+C:\Users\LAB 2\Desktop\GitHub\api-elearning\backend\bin\Debug\net8.0\Serilog.AspNetCore.dll
+C:\Users\LAB 2\Desktop\GitHub\api-elearning\backend\bin\Debug\net8.0\Serilog.Extensions.Hosting.dll
+C:\Users\LAB 2\Desktop\GitHub\api-elearning\backend\bin\Debug\net8.0\Serilog.Extensions.Logging.dll
+C:\Users\LAB 2\Desktop\GitHub\api-elearning\backend\bin\Debug\net8.0\Serilog.Formatting.Compact.dll
+C:\Users\LAB 2\Desktop\GitHub\api-elearning\backend\bin\Debug\net8.0\Serilog.Settings.Configuration.dll
+C:\Users\LAB 2\Desktop\GitHub\api-elearning\backend\bin\Debug\net8.0\Serilog.Sinks.Console.dll
+C:\Users\LAB 2\Desktop\GitHub\api-elearning\backend\bin\Debug\net8.0\Serilog.Sinks.Debug.dll
+C:\Users\LAB 2\Desktop\GitHub\api-elearning\backend\bin\Debug\net8.0\Serilog.Sinks.File.dll

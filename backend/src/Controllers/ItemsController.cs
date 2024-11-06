@@ -4,6 +4,7 @@ using usuariosData.Data;
 using usuariosModel.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
 
 namespace usuariosControllers.Controllers
 {
@@ -12,10 +13,12 @@ namespace usuariosControllers.Controllers
     public class ProductController : ControllerBase
     {
         private readonly ApiDbContext _context;
+        private readonly ILogger<ProductController> _logger;
 
-        public ProductController(ApiDbContext context)
+        public ProductController(ApiDbContext context, ILogger<ProductController> logger)
         {
             _context = context;
+            _logger = logger;
         }
 
         // Acción para manejar solicitudes GET
@@ -25,14 +28,26 @@ namespace usuariosControllers.Controllers
             try
             {
                 var usuarios = await _context.usuarios.ToListAsync();
-                return usuarios == null || usuarios.Count == 0
-                    ? NotFound("No usuarios found.")
-                    : Ok(usuarios);
+                if (usuarios == null || usuarios.Count == 0)
+                {
+                    return NotFound(new ErrorResponse { Message = "No usuarios found.", Detail = "The usuarios table is empty or no matching records were found." });
+                }
+                return Ok(usuarios);
+            }
+            catch (DbUpdateConcurrencyException dbConEx)
+            {
+                _logger.LogError(dbConEx, "A database concurrency error occurred while getting usuarios.");
+                return StatusCode(500, new ErrorResponse { Message = "Database concurrency error", Detail = dbConEx.Message });
+            }
+            catch (DbUpdateException dbEx)
+            {
+                _logger.LogError(dbEx, "A database update error occurred while getting usuarios.");
+                return StatusCode(500, new ErrorResponse { Message = "Database update error", Detail = dbEx.Message });
             }
             catch (Exception ex)
             {
-                // Log the exception (you can use a logging framework like Serilog, NLog, etc.)
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                _logger.LogError(ex, "An error occurred while getting usuarios.");
+                return StatusCode(500, new ErrorResponse { Message = "Internal server error", Detail = ex.Message });
             }
         }
 
@@ -42,14 +57,26 @@ namespace usuariosControllers.Controllers
             try
             {
                 var usuario = await _context.usuarios.FindAsync(id);
-                return usuario == null
-                    ? NotFound($"Usuario with ID {id} not found.")
-                    : Ok(usuario);
+                if (usuario == null)
+                {
+                    return NotFound(new ErrorResponse { Message = $"Usuario with ID {id} not found.", Detail = "No matching record found in the usuarios table." });
+                }
+                return Ok(usuario);
+            }
+            catch (DbUpdateConcurrencyException dbConEx)
+            {
+                _logger.LogError(dbConEx, "A database concurrency error occurred while getting usuario with ID {id}.", id);
+                return StatusCode(500, new ErrorResponse { Message = "Database concurrency error", Detail = dbConEx.Message });
+            }
+            catch (DbUpdateException dbEx)
+            {
+                _logger.LogError(dbEx, "A database update error occurred while getting usuario with ID {id}.", id);
+                return StatusCode(500, new ErrorResponse { Message = "Database update error", Detail = dbEx.Message });
             }
             catch (Exception ex)
             {
-                // Log the exception (you can use a logging framework like Serilog, NLog, etc.)
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                _logger.LogError(ex, "An error occurred while getting usuario with ID {id}.", id);
+                return StatusCode(500, new ErrorResponse { Message = "Internal server error", Detail = ex.Message });
             }
         }
     }

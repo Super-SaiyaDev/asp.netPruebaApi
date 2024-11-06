@@ -19,7 +19,7 @@ namespace api_elearning.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Username = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: false),
                     Clave = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: false),
-                    Rol = table.Column<int>(type: "int", maxLength: 250, nullable: false),
+                    Rol = table.Column<int>(type: "int", nullable: false),
                     activo = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
