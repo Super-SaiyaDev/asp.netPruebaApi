@@ -79,6 +79,39 @@ namespace usuariosControllers.Controllers
                 return StatusCode(500, new ErrorResponse { Message = "Internal server error", Detail = ex.Message });
             }
         }
+
+        [HttpPut("{id}")]
+        public async Task<ActionResult<Usuarios>> UpdateUsuario(int id, string items)
+        {
+            try
+            {
+                var usuario = await _context.usuarios.FindAsync(id);
+                if (usuario == null)
+                {
+                    return NotFound(new ErrorResponse { Message = $"Usuario with ID {id} not found.", Detail = "No matching record found in the usuarios table." });
+                }
+                usuario.activo = items;
+                await _context.SaveChangesAsync();
+                return Ok(usuario);
+            }
+            catch (DbUpdateConcurrencyException dbConEx)
+            {
+                _logger.LogError(dbConEx, "A database concurrency error occurred while updating usuario with ID {id}.", id);
+                return StatusCode(500, new ErrorResponse { Message = "Database concurrency error", Detail = dbConEx.Message });
+            }
+            catch (DbUpdateException dbEx)
+            {
+                _logger.LogError(dbEx, "A database update error occurred while updating usuario with ID {id}.", id);
+                return StatusCode(500, new ErrorResponse { Message = "Database update error", Detail = dbEx.Message });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "An error occurred while updating usuario with ID {id}.", id);
+                return StatusCode(500, new ErrorResponse { Message = "Internal server error", Detail = ex.Message });
+            }
+        }
+
+
     }
 }
 //         [HttpGet("{id}")]

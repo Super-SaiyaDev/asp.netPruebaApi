@@ -17,11 +17,11 @@ namespace usuariosModel.Models
         public string? Clave { get; set; }
 
         [Required]
-        public int Rol { get; set; }
+        public int role { get; set; }
 
         [MaxLength(15)]
         public string activo { get; set; } = "activo";
 
-        public DateTime CreatedAt { get; set; } = DateTime.Now;
+        public DateTime created_at { get; set; } = DateTime.Now;
     }
 }

@@ -151,3 +151,4 @@ C:\Users\LAB 2\Desktop\GitHub\api-elearning\backend\bin\Debug\net8.0\Serilog.Set
 C:\Users\LAB 2\Desktop\GitHub\api-elearning\backend\bin\Debug\net8.0\Serilog.Sinks.Console.dll
 C:\Users\LAB 2\Desktop\GitHub\api-elearning\backend\bin\Debug\net8.0\Serilog.Sinks.Debug.dll
 C:\Users\LAB 2\Desktop\GitHub\api-elearning\backend\bin\Debug\net8.0\Serilog.Sinks.File.dll
+C:\Users\LAB 2\Desktop\GitHub\api-elearning\backend\obj\Debug\net8.0\api-elearning.sourcelink.json
