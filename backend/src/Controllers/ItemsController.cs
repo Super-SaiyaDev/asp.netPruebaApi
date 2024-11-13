@@ -81,17 +81,39 @@ namespace usuariosControllers.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult<Usuarios>> UpdateUsuario(int id, string items)
+        public async Task<IActionResult> UpdateUsuario(int id, Usuarios item)
         {
+            if (id != item.Id)
+            {
+                return BadRequest(new ErrorResponse { Message = "ID mismatch", Detail = "The ID in the URL does not match the ID of the item." });
+            }
+
+            var usuario = await _context.usuarios.FindAsync(id);
+            if (usuario == null)
+            {
+                return NotFound(new ErrorResponse { Message = $"Usuario with ID {id} not found.", Detail = "No matching record found in the usuarios table." });
+            }
+
+            // update items
+            usuario.Username = item.Username;
+            usuario.Clave = item.Clave;
+            usuario.role = item.role;
+            // Establecer una fecha por defecto si no está definida
+            if (item.created_at == default(DateTime))
+            {
+                usuario.created_at = DateTime.UtcNow;
+            }
+            else
+            {
+                usuario.created_at = item.created_at;
+            }
+
+            _context.Entry(usuario).State = EntityState.Modified;
+
             try
             {
-                var usuario = await _context.usuarios.FindAsync(id);
-                if (usuario == null)
-                {
-                    return NotFound(new ErrorResponse { Message = $"Usuario with ID {id} not found.", Detail = "No matching record found in the usuarios table." });
-                }
-                usuario.activo = items;
                 await _context.SaveChangesAsync();
+                Console.WriteLine($"Updated usuario with ID {id}: {item.Username}");
                 return Ok(usuario);
             }
             catch (DbUpdateConcurrencyException dbConEx)
@@ -110,7 +132,6 @@ namespace usuariosControllers.Controllers
                 return StatusCode(500, new ErrorResponse { Message = "Internal server error", Detail = ex.Message });
             }
         }
-
 
     }
 }
