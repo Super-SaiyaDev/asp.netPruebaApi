@@ -132,8 +132,12 @@ namespace usuariosControllers.Controllers
                 return StatusCode(500, new ErrorResponse { Message = "Internal server error", Detail = ex.Message });
             }
         }
+    
+
+
 
     }
+
 }
 //         [HttpGet("{id}")]
 //         public async Task<ActionResult<Item>> GetItem(int id)

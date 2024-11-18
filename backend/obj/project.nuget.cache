@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7kIdTrHZa9E=",
+  "dgSpecHash": "AhnqFE7PgW4=",
   "success": true,
-  "projectFilePath": "C:\\Users\\LAB 2\\Desktop\\GitHub\\api-elearning\\backend\\api-elearning.csproj",
+  "projectFilePath": "C:\\Users\\LAB 2\\Desktop\\GitHub\\asp.netPruebaApi\\backend\\api-elearning.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\LAB 2\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\LAB 2\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

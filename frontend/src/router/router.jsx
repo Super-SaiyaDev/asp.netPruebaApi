@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LoginUser from "../app/login";
+import Home from "../app/home";
 
 
 const Path = () => {
@@ -10,6 +11,7 @@ const Path = () => {
 
         {/* //?  Rutas del login. */}
         <Route path="/login" element={<LoginUser />} />
+        <Route path="/" element={<Home />}/>
 
         <Route
           path="*"

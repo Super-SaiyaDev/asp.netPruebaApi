@@ -37,21 +37,23 @@ const LoginUser = () => {
 
     //! i'am send the value of the UserInputs
     axios
-      .post("http://localhost:3000/api/user/login", values)
+      .post("http://localhost:5040/api/Auth/login", values)
       .then((res) => {
         if (values.clave != "" && values.user != "") {
           console.log(res.data);
-          if (res.data.status === "Success login successful") {
-            navigate("/home");
+          if (res.data.success) {
+            navigate("/");
           } else {
-            alert("Contraseña o usuario incorrectos");
             navigate("/login");
           }
         } else {
           alert("rellene todos los campos");
         }
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        alert(errorMessage);
+      }); // Mostrar alert con el mensaje de error);
   };
 
   return (
@@ -70,7 +72,7 @@ const LoginUser = () => {
                 <span className="logo-name">APRD</span>
               </span>
 
-              <h1>Inicia sesion para mejorar tu experiecnia.</h1>
+              <h1>Inicia sesion</h1>
 
               {/* icons to login */}
 
@@ -107,7 +109,7 @@ const LoginUser = () => {
                   type={"text"}
                   lblName={"Username"}
                   name={"user"}
-                  value={values}
+                  value={values.user}
                 />
               </div>
 
@@ -118,7 +120,7 @@ const LoginUser = () => {
                   type={"password"}
                   lblName={"Password"}
                   name={"clave"}
-                  value={values}
+                  value={values.clave}
                 />
               </div>
 
