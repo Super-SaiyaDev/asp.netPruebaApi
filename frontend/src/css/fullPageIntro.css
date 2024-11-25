@@ -1,104 +1,120 @@
-  /* Full Page Intro Styles */
-  .full-page-intro {
-    background-image: url('https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2019/05/programacion-kotlin.jpg?tf=3840x');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-align: center;
-    position: relative;
-  }
-  
-  .mask {
-    background-color: rgba(0, 0, 0, 0.5);
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .full-page-intro .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .full-page-intro h1 {
-    font-size: 48px;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-  
-  .full-page-intro p {
-    font-size: 18px;
-    margin-bottom: 20px;
-  }
-  
-  .full-page-intro .btn {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 18px;
-    transition: background-color 0.3s;
-  }
-  
-  .full-page-intro .btn:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Card Styles */
-  .card {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
-  }
-  
-  .card-body {
-    padding: 20px;
-  }
-  
-  .md-form {
-    margin-bottom: 20px;
-  }
-  
-  .md-form input {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .md-form label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  .text-center {
-    text-align: center;
-  }
-  
-  .btn-indigo {
-    background-color: #6610f2;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .btn-indigo:hover {
-    background-color: #520dc2;
-  }
-  
+/* Full Page Intro Styles */
+.hr-container {
+  background-color: rgb(242, 245, 255);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hr-container-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pircture {
+  position: relative;
+  bottom: 40px;
+}
+
+.pircture img {
+  width: 1250px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.hr-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hr-content .hr-title {
+  text-align: center;
+  letter-spacing: 8px;
+  position: relative;
+  right: 100px;
+  bottom: 60px;
+  color: rgb(37, 133, 241);
+  font-size: 80px;
+  font-weight: 300;
+  background-color: rgb(255, 255, 255);
+}
+
+.container strong {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #2f65c994;
+}
+
+.full-page-intro .btn {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s;
+}
+
+.full-page-intro .btn:hover {
+  background-color: #0056b3;
+}
+
+/* Card Styles */
+.card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.md-form {
+  margin-bottom: 20px;
+}
+
+.md-form input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.md-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.hr-btn {
+  margin: 12px;
+  font-size: 20px;
+  background-color: rgb(110, 111, 165);
+  color: rgb(208, 233, 184);
+  border: none;
+  border-radius: 10px;
+  padding: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.hr-btn i{
+  margin-left: 20px;
+  font-size: 20px;
+}
+
+.hr-btn:hover {
+  background-color: #520dc2;
+}

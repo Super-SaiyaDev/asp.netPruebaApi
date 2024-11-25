@@ -1,15 +1,18 @@
 import React from "react";
+import { FaFacebook, FaInstagram } from "react-icons/fa";
+import { FaYoutube } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 import "../css/navbar.css";
 
 const Navbar = () => {
   return (
     <nav className="navbar">
-
       <div className="nv-container">
-
-        <a className="navbar-brand" href="#">
-          <strong>APRD</strong>
-        </a>
+        <div className="nv-container-title">
+          <a className="nv-title" href="#">
+            <h1>APRD</h1>
+          </a>
+        </div>
 
         <div className="navbar-links">
           <ul className="navbar-nav">
@@ -44,20 +47,28 @@ const Navbar = () => {
               </a>
             </li>
           </ul>
+        </div>
+
+        <div className="navbar-links">
           <ul className="navbar-nav nav-icons">
             <li className="nav-item">
               <a href="#" className="nav-link" target="_blank">
-                <i className="fab fa-facebook-f"></i>
+                <i className="fab fa-facebook-f"><FaFacebook/></i>
               </a>
             </li>
             <li className="nav-item">
               <a href="#" className="nav-link" target="_blank">
-                <i className="fab fa-twitter"></i>
+                <i className="fab fa-instagram"><FaInstagram/></i>
               </a>
             </li>
             <li className="nav-item">
               <a href="#" className="nav-link" target="_blank">
-                <i className="fab fa-github"></i> APRD GitHub
+                <i className="fab fa-youtube"><FaYoutube/></i>
+              </a>
+            </li>
+            <li className="nav-item">
+              <a href="#" className="nav-link" target="_blank">
+                <i className="fab fa-github"><FaGithub/></i> 
               </a>
             </li>
           </ul>

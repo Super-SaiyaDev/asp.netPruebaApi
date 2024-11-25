@@ -12,7 +12,9 @@ const Home = () => {
         <Navbar />
       </div>
       <section>
-        <FullPageIntro />
+        <header>
+          <FullPageIntro />
+        </header>
         <main>
           <div className="container">
             <MainInfo />
