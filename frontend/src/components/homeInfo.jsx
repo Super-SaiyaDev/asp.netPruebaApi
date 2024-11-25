@@ -3,7 +3,7 @@ import '../css/mapInfo.css';
 
 const MainInfo = () => {
   return (
-    <div>
+    <>
       {/* Section: Main info */}
       <section className="main-info">
         <div className="row">
@@ -303,7 +303,7 @@ const MainInfo = () => {
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 };
 

@@ -34,20 +34,22 @@
   text-transform: uppercase;
   color: black;
   font-size: 25px;
+  margin-left: 2px;
 }
 
 .icon .logo-name {
   font-size: 25px;
   color: #4a5c6a;
+  margin-left: 4px;
 }
 
-.input-group h1 {
-  color: rgba(155, 119, 19, 0.699);
+.t-login h1 {
+  color: rgba(153, 149, 138, 0.856);
   text-shadow: 2px 5px 20px #76b9a8;
   font-size: 15px;
   font-weight: 650;
   text-align: left;
-  margin: 10px;
+  margin: 10px 10px 15px 5px;
 }
 
 .input-feild {

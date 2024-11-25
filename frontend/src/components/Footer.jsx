@@ -1,48 +1,66 @@
 import React from "react";
+import { FaFacebook } from "react-icons/fa";
+import { LuInstagram } from "react-icons/lu";
+import { FaYoutube } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+import { IoIosCloudDownload } from "react-icons/io";
+import { SlGraduation } from "react-icons/sl";
 import "../css/footer.css";
 
 const Footer = () => {
   return (
-    <footer className="page-footer text-center font-small mt-4">
-      <div className="pt-4">
-        <a
-          className="btn btn-outline-white"
-          href="#"
-          target="_blank"
-          role="button"
-        >
-          Descarga nuestros cursos <i className="fas fa-download ml-2"></i>
+    <div className="footer-container">
+      <div className="f-btns">
+        <div className="btn">
+          <a className="f-link" href="#" target="_blank" role="button">
+            Descarga nuestros cursos{" "}
+            <i className="icon fas fa-download">
+              <IoIosCloudDownload />
+            </i>
+          </a>
+        </div>
+
+        <div className="btn">
+          <a className="f-link" href="#">
+            Comienza ya!!{" "}
+            <i className="icon fas fa-graduation-cap">
+              <SlGraduation />
+            </i>
+          </a>
+        </div>
+      </div>
+
+      <div className="f-social-icon">
+        <a href="#" target="_blank">
+          <i className="icon-f fab fa-facebook-f">
+            <FaFacebook />
+          </i>
         </a>
-        <a className="btn btn-outline-white" href="#">
-          Comienza ya!! <i className="fas fa-graduation-cap ml-2"></i>
+        <a href="#" target="_blank">
+          <i className="icon-f fab fa-youtube">
+            <FaYoutube />
+          </i>
+        </a>
+        <a href="#" target="_blank">
+          <i className="icon-f fab fa-instagram-plus-g">
+            <LuInstagram />
+          </i>
+        </a>
+        <a href="#" target="_blank">
+          <i className="icon-f fab fa-github">
+            <FaGithub />
+          </i>
         </a>
       </div>
-      <hr className="my-4" />
-      <div className="pb-4">
-        <a href="#" target="_blank">
-          <i className="fab fa-facebook-f mr-3"></i>
-        </a>
-        <a href="#" target="_blank">
-          <i className="fab fa-twitter mr-3"></i>
-        </a>
-        <a href="#" target="_blank">
-          <i className="fab fa-youtube mr-3"></i>
-        </a>
-        <a href="#" target="_blank">
-          <i className="fab fa-google-plus-g mr-3"></i>
-        </a>
-        <a href="#" target="_blank">
-          <i className="fab fa-github mr-3"></i>
-        </a>
-      </div>
-      <div className="footer-copyright py-3">
-        © 2019 Copyright:{" "}
+
+      <div className="f-copyright">
+       <span> © 2019 Copyright:{" "}</span>
         <a href="#" target="_blank">
           {" "}
-          APRD.com{" "}
+          APRD
         </a>
       </div>
-    </footer>
+    </div>
   );
 };
 

@@ -1,42 +1,84 @@
-  /* Footer Styles */
-  .page-footer {
-    background-color: #333;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-    margin-top: 40px;
-  }
-  
-  .page-footer a {
-    color: white;
-    text-decoration: none;
-    margin: 0 10px;
-  }
-  
-  .page-footer a:hover {
-    text-decoration: underline;
-  }
-  
-  .page-footer .btn {
-    background-color: transparent;
-    border: 1px solid white;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-  }
-  
-  .page-footer .btn:hover {
-    background-color: white;
-    color: #333;
-  }
-  
-  .page-footer .social-icons i {
-    font-size: 24px;
-    margin: 0 10px;
-  }
-  
-  .footer-copyright {
-    margin-top: 20px;
-  }
+.footer-container {
+  text-align: center;
+  font-size: small;
+  margin-top: 20px;;
+  width: 100%;
+  background-color: #9b3333;
+}
+
+.f-btns {
+  padding: 10px;
+}
+
+.f-link {
+  width: 320px;
+  margin-left: 20px;
+  border-radius: 10px;   
+  color: #252525;
+  background-color: rgb(151, 141, 141);
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.f-link {
+  background-color: #fff;
+  color: #694b4b;
+}
+
+.f-line {
+margin-bottom: 10px;
+}
+
+.f-social-icon {
+  padding: 10px;
+  background-color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.icon-f {
+  padding: 10px;
+  font-size: 1.5rem;
+  margin: 12px;
+  color: whitesmoke;
+  transition: 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86) ;
+
+}
+
+.fa-facebook-f {
+  color: #0c498a;
+}
+
+.fa-youtube{
+  color: #ff0000;
+
+}
+
+.fa-instagram-plus-g{
+  color: #4d0c8a;
+}
+
+.fa-github {
+  color: #000000;
+}
+
+.f-copyright {
+  padding: 1rem 0;
+  background-color: #25619e;
+}
+
+.f-copyright span {
+  color: rgb(255, 255, 255);
+  font-weight: 200;
+}
+.f-copyright a {
+  color: #f3eeee;
+  text-decoration: none;
+}
+
+.f-copyright a:hover {
+  color: rgb(160, 28, 28);
+  text-decoration: underline;
+}
+

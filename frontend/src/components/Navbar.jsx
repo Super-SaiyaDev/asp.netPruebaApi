@@ -4,10 +4,13 @@ import "../css/navbar.css";
 const Navbar = () => {
   return (
     <nav className="navbar">
-      <div className="container">
+
+      <div className="nv-container">
+
         <a className="navbar-brand" href="#">
           <strong>APRD</strong>
         </a>
+
         <div className="navbar-links">
           <ul className="navbar-nav">
             <li className="nav-item active">

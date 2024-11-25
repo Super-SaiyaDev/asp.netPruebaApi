@@ -7,16 +7,22 @@ import "../css/home.css";
 
 const Home = () => {
   return (
-    <div>
-      <Navbar />
-      <FullPageIntro />
-      <main>
-        <div className="container">
-          <MainInfo />
-        </div>
-      </main>
-      <Footer />
-    </div>
+    <>
+      <div id="navbar">
+        <Navbar />
+      </div>
+      <section>
+        <FullPageIntro />
+        <main>
+          <div className="container">
+            <MainInfo />
+          </div>
+        </main>
+      </section>
+      <footer>
+        <Footer />
+      </footer>
+    </>
   );
 };
 

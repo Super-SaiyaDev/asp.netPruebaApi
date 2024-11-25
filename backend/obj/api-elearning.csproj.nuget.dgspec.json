@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\LAB 2\\Desktop\\GitHub\\asp.netPruebaApi\\backend\\api-elearning.csproj": {}
+    "C:\\Users\\programacion 28\\Documents\\GitHub\\asp.netPruebaApi\\backend\\api-elearning.csproj": {}
   },
   "projects": {
-    "C:\\Users\\LAB 2\\Desktop\\GitHub\\asp.netPruebaApi\\backend\\api-elearning.csproj": {
+    "C:\\Users\\programacion 28\\Documents\\GitHub\\asp.netPruebaApi\\backend\\api-elearning.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\LAB 2\\Desktop\\GitHub\\asp.netPruebaApi\\backend\\api-elearning.csproj",
+        "projectUniqueName": "C:\\Users\\programacion 28\\Documents\\GitHub\\asp.netPruebaApi\\backend\\api-elearning.csproj",
         "projectName": "api-elearning",
-        "projectPath": "C:\\Users\\LAB 2\\Desktop\\GitHub\\asp.netPruebaApi\\backend\\api-elearning.csproj",
-        "packagesPath": "C:\\Users\\LAB 2\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\LAB 2\\Desktop\\GitHub\\asp.netPruebaApi\\backend\\obj\\",
+        "projectPath": "C:\\Users\\programacion 28\\Documents\\GitHub\\asp.netPruebaApi\\backend\\api-elearning.csproj",
+        "packagesPath": "C:\\Users\\programacion 28\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\programacion 28\\Documents\\GitHub\\asp.netPruebaApi\\backend\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\LAB 2\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\programacion 28\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

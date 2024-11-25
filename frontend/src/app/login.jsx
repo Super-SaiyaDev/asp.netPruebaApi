@@ -67,12 +67,16 @@ const LoginUser = () => {
             <div className="input-group">
               {/* Logo */}
 
-              <span className="icon">
-                <FaBook />
-                <span className="logo-name">APRD</span>
-              </span>
+              <div className="title-login">
+                <div className="icon">
+                  <FaBook />
+                  <span className="logo-name">APRD</span>
+                </div>
 
-              <h1>Inicia sesion</h1>
+                <div className="t-login">
+                  <h1>Inicia sesion</h1>
+                </div>
+              </div>
 
               {/* icons to login */}
 
