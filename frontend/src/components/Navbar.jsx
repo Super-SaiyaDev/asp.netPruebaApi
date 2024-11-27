@@ -2,6 +2,7 @@ import React from "react";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
+import { FaUser } from "react-icons/fa";
 import "../css/navbar.css";
 
 const Navbar = () => {
@@ -22,13 +23,13 @@ const Navbar = () => {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/Home/Cursos">
+              <a className="nav-link" href="/Cursos">
                 Cursos
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/Home/CursosGratis">
-                Recursos Gratis
+              <a className="nav-link" href="/planesPago" target="_blank">
+                Planes y costos
               </a>
             </li>
             <li className="nav-item">
@@ -37,12 +38,7 @@ const Navbar = () => {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/Home/PlanesPago" target="_blank">
-                Planes y costos
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/Home/About">
+              <a className="nav-link" href="/about">
                 Más de nosotros
               </a>
             </li>
@@ -53,22 +49,38 @@ const Navbar = () => {
           <ul className="navbar-nav nav-icons">
             <li className="nav-item">
               <a href="#" className="nav-link" target="_blank">
-                <i className="fab fa-facebook-f"><FaFacebook/></i>
+                <i className="fab fa-facebook-f">
+                  <FaFacebook />
+                </i>
               </a>
             </li>
             <li className="nav-item">
               <a href="#" className="nav-link" target="_blank">
-                <i className="fab fa-instagram"><FaInstagram/></i>
+                <i className="fab fa-instagram">
+                  <FaInstagram />
+                </i>
               </a>
             </li>
             <li className="nav-item">
               <a href="#" className="nav-link" target="_blank">
-                <i className="fab fa-youtube"><FaYoutube/></i>
+                <i className="fab fa-youtube">
+                  <FaYoutube />
+                </i>
               </a>
             </li>
             <li className="nav-item">
               <a href="#" className="nav-link" target="_blank">
-                <i className="fab fa-github"><FaGithub/></i> 
+                <i className="fab fa-github">
+                  <FaGithub />
+                </i>
+              </a>
+            </li>
+            <li className="nav-item">
+              <a href="#" className="nav-link" target="_blank">
+                Inicia Sesion
+                <i className="fab fa-github">
+                  <FaUser />
+                </i>
               </a>
             </li>
           </ul>

@@ -1,0 +1,120 @@
+/* frontend/src/css/PlanesPago.css */
+.my-5 {
+  margin-top: 3rem !important;
+  margin-bottom: 3rem !important;
+}
+
+.h3 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.mb-5 {
+  margin-bottom: 3rem !important;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 40vh;
+}
+
+.col-lg-4,
+.col-md-6,
+.mb-4 {
+  margin-bottom: 1.5rem !important;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+}
+
+.card-body {
+  flex: 1 1 auto;
+  padding: 1.25rem;
+}
+
+.card-title {
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+}
+
+.card-price {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.fa-ul {
+  padding-left: 2.5em;
+  list-style-type: none;
+}
+
+.fa-ul li {
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+.fa-li {
+  position: absolute;
+  left: -2.5em;
+  width: 2em;
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: #0056b3;
+  border-color: #004085;
+}
+
+.custom-card {
+  background: linear-gradient(45deg, #000000, #434343);
+  color: gold;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.custom-card:hover {
+  transform: scale(1.05);
+  box-shadow: 20px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.custom-card .card-title,
+.custom-card .card-price,
+.custom-card .fa-ul li {
+  color: #a87b05;
+}

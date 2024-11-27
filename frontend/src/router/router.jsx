@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LoginUser from "../app/login";
 import Home from "../app/home";
 import Cursos from "../app/cursos";
-
+import About from "../app/about";
+import PlanesPago from "../components/planesPago";
 
 const Path = () => {
   return (
@@ -14,6 +15,9 @@ const Path = () => {
         <Route path="/login" element={<LoginUser />} />
         <Route path="/" element={<Home />}/>
         <Route path="/cursos" element={<Cursos/>}/>
+        <Route path="/about" element={<About/>}/>
+        <Route path="/planesPago" element={<PlanesPago/>}/>
+
 
         <Route
           path="*"
