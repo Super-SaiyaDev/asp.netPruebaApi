@@ -1,120 +1,76 @@
 /* Full Page Intro Styles */
 .hr-container {
-  background-color: rgb(242, 245, 255);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.699)), url("https://static.vecteezy.com/system/resources/thumbnails/001/935/394/original/flight-into-neon-lights-cyber-futuristic-virtual-reality-free-video.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   height: 100vh;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-}
-
-.hr-container-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.pircture {
-  position: relative;
-  bottom: 40px;
-}
-
-.pircture img {
-  width: 1250px;
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
 }
 
 .hr-content {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-left: 40px;
 }
 
 .hr-content .hr-title {
-  text-align: center;
+
   letter-spacing: 8px;
-  position: relative;
-  right: 100px;
-  bottom: 60px;
-  color: rgb(37, 133, 241);
-  font-size: 80px;
-  font-weight: 300;
-  background-color: rgb(255, 255, 255);
+  color: rgb(230, 233, 238);
+  font-size: 50px;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
-.container strong {
-  font-size: 18px;
-  margin-bottom: 20px;
-  color: #2f65c994;
-}
-
-.full-page-intro .btn {
-  background-color: #007bff;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 18px;
-  transition: background-color 0.3s;
-}
-
-.full-page-intro .btn:hover {
-  background-color: #0056b3;
-}
-
-/* Card Styles */
-.card {
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.descripcion{
   margin-top: 20px;
+  width: 890px;
 }
 
-.card-body {
-  padding: 20px;
+.hr-content .descripcion span {
+  color: #f0f0f0e1;
+  text-align: left;
 }
 
-.md-form {
-  margin-bottom: 20px;
-}
-
-.md-form input {
+.pircture{
   width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  height: 100%;
 }
 
-.md-form label {
-  display: block;
-  margin-bottom: 5px;
+.pircture img{
+  position: absolute;
+  top: 200px;  
+  left: 800px;
+  width: 60%;
+  height: 500px;
 }
 
-.text-center {
-  text-align: center;
+
+.content-btn{
+margin: 12px;
 }
 
 .hr-btn {
   margin: 12px;
   font-size: 20px;
-  background-color: rgb(110, 111, 165);
+  background-color: rgb(182, 53, 81);
   color: rgb(208, 233, 184);
   border: none;
   border-radius: 10px;
-  padding: 25px;
+  padding: 15px;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
-.hr-btn i{
+.hr-btn i {
   margin-left: 20px;
   font-size: 20px;
 }
 
 .hr-btn:hover {
-  background-color: #520dc2;
+  background-color: #c20d0d;
 }

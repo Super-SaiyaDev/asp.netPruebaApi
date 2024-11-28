@@ -3,6 +3,7 @@ import { FaFacebook, FaInstagram } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
+import { FaBook } from "react-icons/fa";
 import "../css/navbar.css";
 
 const Navbar = () => {
@@ -10,15 +11,17 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="nv-container">
         <div className="nv-container-title">
-          <a className="nv-title" href="#">
-            <h1>APRD</h1>
-          </a>
+          <div className="nv-title">
+            <h1>
+              <FaBook /> APRD
+            </h1>
+          </div>
         </div>
 
         <div className="navbar-links">
           <ul className="navbar-nav">
             <li className="nav-item active">
-              <a className="nav-link" href="/Home/Index">
+              <a className="nav-link" href="/">
                 Inicio
               </a>
             </li>
@@ -33,7 +36,7 @@ const Navbar = () => {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/Home/Unete">
+              <a className="nav-link" href="/unete">
                 Trabajar en APRD
               </a>
             </li>

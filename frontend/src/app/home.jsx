@@ -1,9 +1,9 @@
 import React from "react";
-import MainInfo from "../components/homeInfo";
+import MainInfo from "../components/home";
 import Navbar from "../components/navbar";
 import FullPageIntro from "../components/FullPageIntro";
 import Footer from "../components/Footer";
-import "../css/home.css";
+
 
 const Home = () => {
   return (

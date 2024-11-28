@@ -1,12 +1,8 @@
 /* frontend/src/css/PlanesPago.css */
-.my-5 {
-  margin-top: 3rem !important;
-  margin-bottom: 3rem !important;
-}
 
 .h3 {
-  font-size: 1.75rem;
-  margin-bottom: 1rem;
+  font-size: 3rem;
+  margin-top: 3rem;
 }
 
 .text-center {
@@ -21,7 +17,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 40vh;
 }
 
 .col-lg-4,
@@ -35,6 +30,7 @@
   display: flex;
   flex-direction: column;
   min-width: 0;
+  width: 18rem;
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
@@ -44,17 +40,16 @@
 
 .card-body {
   flex: 1 1 auto;
-  padding: 1.25rem;
+  padding: 1.4rem;
 }
 
 .card-title {
-  margin-bottom: 0.75rem;
   font-size: 1.25rem;
 }
 
 .card-price {
   font-size: 1.5rem;
-  margin-bottom: 1rem;
+
 }
 
 .fa-ul {
@@ -62,9 +57,11 @@
   list-style-type: none;
 }
 
+
 .fa-ul li {
+  margin-top: 10px;
   position: relative;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .fa-li {
@@ -74,9 +71,12 @@
   text-align: center;
 }
 
-.btn {
+.p-btn{
+  position: relative;
+  left: 40px;
+  top: 20px;
   display: inline-block;
-  font-weight: 400;
+  font-weight: 300;
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
@@ -86,17 +86,17 @@
   font-size: 1rem;
   line-height: 1.5;
   border-radius: 0.25rem;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+  transition: color 2s cubic-bezier(0.68, -0.55, 0.265, 1.55), background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-.btn-primary {
+.p-btn {
   color: #fff;
   background-color: #007bff;
   border-color: #007bff;
 }
 
-.btn-primary:hover {
+.p-btn:hover{
   color: #fff;
   background-color: #0056b3;
   border-color: #004085;
