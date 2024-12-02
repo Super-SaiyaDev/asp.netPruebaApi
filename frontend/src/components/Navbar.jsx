@@ -31,7 +31,7 @@ const Navbar = () => {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/planesPago" target="_blank">
+              <a className="nav-link" href="/planesPago">
                 Planes y costos
               </a>
             </li>
@@ -51,35 +51,35 @@ const Navbar = () => {
         <div className="navbar-links">
           <ul className="navbar-nav nav-icons">
             <li className="nav-item">
-              <a href="#" className="nav-link" target="_blank">
+              <a href="#" className="nav-link">
                 <i className="fab fa-facebook-f">
                   <FaFacebook />
                 </i>
               </a>
             </li>
             <li className="nav-item">
-              <a href="#" className="nav-link" target="_blank">
+              <a href="#" className="nav-link">
                 <i className="fab fa-instagram">
                   <FaInstagram />
                 </i>
               </a>
             </li>
             <li className="nav-item">
-              <a href="#" className="nav-link" target="_blank">
+              <a href="#" className="nav-link">
                 <i className="fab fa-youtube">
                   <FaYoutube />
                 </i>
               </a>
             </li>
             <li className="nav-item">
-              <a href="#" className="nav-link" target="_blank">
+              <a href="#" className="nav-link">
                 <i className="fab fa-github">
                   <FaGithub />
                 </i>
               </a>
             </li>
             <li className="nav-item">
-              <a href="#" className="nav-link" target="_blank">
+              <a href="#" className="nav-link">
                 Inicia Sesion
                 <i className="fab fa-github">
                   <FaUser />
