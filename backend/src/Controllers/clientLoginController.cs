@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using usuariosData.Data;
-using usuariosModel.Models;
+using UsuariosModel.Models;
 using System.Threading.Tasks;
 
 namespace usuariosControllers.Controllers
@@ -21,22 +21,22 @@ namespace usuariosControllers.Controllers
         public async Task<IActionResult> Login([FromBody] LoginRequest request)
         {
             var user = await _context.usuarios
-                .FirstOrDefaultAsync(u => u.Username == request.User && u.Clave == request.Clave);
+                .FirstOrDefaultAsync(data => data.Username == request.User && data.Clave == request.Clave);
 
             if (user == null)
             {
                 return Unauthorized(new { success = false, message = "Invalid username or password" });
             }
 
-            // Aquí puedes agregar lógica para generar un token JWT si es necesario
 
             return Ok(new { success = true, message = "Login successful" });
         }
+
     }
 
     public class LoginRequest
     {
-        public string User { get; set; }
-        public string Clave { get; set; }
+        public string? User { get; set; }
+        public string? Clave { get; set; }
     }
 }

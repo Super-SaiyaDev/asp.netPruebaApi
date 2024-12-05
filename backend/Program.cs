@@ -41,7 +41,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI(c =>
     {
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Products API");
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "E-learning API");
         c.RoutePrefix = string.Empty; // Set Swagger UI at the app's root
     });
 }

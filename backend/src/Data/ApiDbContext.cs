@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using usuariosModel.Models;
+using UsuariosModel.Models;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
@@ -17,7 +17,7 @@ namespace usuariosData.Data
             _logger = logger;
         }
 
-        public DbSet<Usuarios> usuarios { get; set; }
+        public DbSet<Usuarios> usuarios { get; set; } = null!;
 
         public override int SaveChanges()
         {

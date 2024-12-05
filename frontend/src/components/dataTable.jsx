@@ -38,8 +38,10 @@ function DataTable({ data = [], rows, columns }) {
       ))}
       <td>
         <Link to={`/update/${item.IdUsers}`}>
-          <button className="btn-operation btn-edit">
-            <RiEdit2Fill />
+          <button className="btn-operation ">
+            <i className="btn-action btn-edit">
+              <RiEdit2Fill />
+            </i>
           </button>
         </Link>
       </td>
@@ -48,7 +50,9 @@ function DataTable({ data = [], rows, columns }) {
           className="btn-operation btn-delete"
           onClick={() => handlerDelete(item.IdUsers)}
         >
-          <MdDelete />
+          <i className="btn-action btn-delete">
+            <MdDelete />
+          </i>
         </button>
       </td>
     </tr>

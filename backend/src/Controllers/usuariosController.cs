@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using usuariosData.Data;
-using usuariosModel.Models;
+using UsuariosModel.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
@@ -10,12 +10,12 @@ namespace usuariosControllers.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProductController : ControllerBase
+    public class UsuariosController : ControllerBase
     {
         private readonly ApiDbContext _context;
-        private readonly ILogger<ProductController> _logger;
+        private readonly ILogger<UsuariosController> _logger;
 
-        public ProductController(ApiDbContext context, ILogger<ProductController> logger)
+        public UsuariosController(ApiDbContext context, ILogger<UsuariosController> logger)
         {
             _context = context;
             _logger = logger;
@@ -27,27 +27,24 @@ namespace usuariosControllers.Controllers
         {
             try
             {
-                var usuarios = await _context.usuarios.ToListAsync();
-                if (usuarios == null || usuarios.Count == 0)
+                var usuarios = await _context.usuarios
+                    .Where(data => data.activo == "activo")
+                    .ToListAsync();
+
+                if (usuarios.Count == 0)
                 {
                     return NotFound(new ErrorResponse { Message = "No usuarios found.", Detail = "The usuarios table is empty or no matching records were found." });
                 }
+
                 return Ok(usuarios);
             }
             catch (DbUpdateConcurrencyException dbConEx)
             {
-                _logger.LogError(dbConEx, "A database concurrency error occurred while getting usuarios.");
                 return StatusCode(500, new ErrorResponse { Message = "Database concurrency error", Detail = dbConEx.Message });
-            }
-            catch (DbUpdateException dbEx)
-            {
-                _logger.LogError(dbEx, "A database update error occurred while getting usuarios.");
-                return StatusCode(500, new ErrorResponse { Message = "Database update error", Detail = dbEx.Message });
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "An error occurred while getting usuarios.");
-                return StatusCode(500, new ErrorResponse { Message = "Internal server error", Detail = ex.Message });
+                return StatusCode(500, new ErrorResponse { Message = "An unexpected error occurred", Detail = ex.Message });
             }
         }
 
@@ -80,6 +77,38 @@ namespace usuariosControllers.Controllers
             }
         }
 
+        [HttpPost]
+        public async Task<IActionResult> CreateUsuarios([FromBody] Usuarios user)
+        {
+            try
+            {
+                if (user == null)
+                {
+                    return BadRequest(new ErrorResponse { Message = "Invalid user data", Detail = "The user object is null." });
+                }
+
+                // No need to set ID or activo, the database will handle it
+                await _context.usuarios.AddAsync(user);
+                await _context.SaveChangesAsync();
+
+                return CreatedAtAction(nameof(GetUsuario), new { id = user.Id }, user);
+            }
+            catch (DbUpdateConcurrencyException dbConEx)
+            {
+                _logger.LogError(dbConEx, "A database concurrency error occurred while creating a usuario.");
+                return StatusCode(500, new ErrorResponse { Message = "Database concurrency error", Detail = dbConEx.Message });
+            }
+            catch (DbUpdateException dbEx)
+            {
+                _logger.LogError(dbEx, "A database update error occurred while creating a usuario.");
+                return StatusCode(500, new ErrorResponse { Message = "Database update error", Detail = dbEx.InnerException?.Message ?? dbEx.Message });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "An error occurred while creating a usuario.");
+                return StatusCode(500, new ErrorResponse { Message = "Internal server error", Detail = ex.InnerException?.Message ?? ex.Message });
+            }
+        }
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateUsuario(int id, Usuarios item)
         {
@@ -99,14 +128,14 @@ namespace usuariosControllers.Controllers
             usuario.Clave = item.Clave;
             usuario.role = item.role;
             // Establecer una fecha por defecto si no está definida
-            if (item.created_at == default(DateTime))
-            {
-                usuario.created_at = DateTime.UtcNow;
-            }
-            else
-            {
-                usuario.created_at = item.created_at;
-            }
+            // if (item.created_at == default(DateTime))
+            // {
+            //     usuario.created_at = DateTime.UtcNow;
+            // }
+            // else
+            // {
+            //     usuario.created_at = item.created_at;
+            // }
 
             _context.Entry(usuario).State = EntityState.Modified;
 
@@ -118,21 +147,64 @@ namespace usuariosControllers.Controllers
             }
             catch (DbUpdateConcurrencyException dbConEx)
             {
-                _logger.LogError(dbConEx, "A database concurrency error occurred while updating usuario with ID {id}.", id);
                 return StatusCode(500, new ErrorResponse { Message = "Database concurrency error", Detail = dbConEx.Message });
             }
-            catch (DbUpdateException dbEx)
+        }
+
+        [HttpDelete("desactivar/{id}")]
+        public async Task<IActionResult> DesactivarUsuario(int id)
+        {
+
+            var user = await _context.usuarios.FindAsync(id);
+            if (user == null)
             {
-                _logger.LogError(dbEx, "A database update error occurred while updating usuario with ID {id}.", id);
-                return StatusCode(500, new ErrorResponse { Message = "Database update error", Detail = dbEx.Message });
+                return NotFound(new ErrorResponse { Message = $"Usuario with ID {id} not found.", Detail = "No matching record found in the usuarios table." });
             }
-            catch (Exception ex)
+
+            // update items
+            user.activo = "inactivo";
+
+
+            _context.Entry(user).State = EntityState.Modified;
+
+            try
             {
-                _logger.LogError(ex, "An error occurred while updating usuario with ID {id}.", id);
-                return StatusCode(500, new ErrorResponse { Message = "Internal server error", Detail = ex.Message });
+                await _context.SaveChangesAsync();
+                return Ok(user);
+            }
+            catch (DbUpdateConcurrencyException dbConEx)
+            {
+                return StatusCode(500, new ErrorResponse { Message = "Database concurrency error", Detail = dbConEx.Message });
             }
         }
-    
+
+        [HttpPut("activa/{id}")]
+        public async Task<IActionResult> ActivarUsuario(int id)
+        {
+
+            var user = await _context.usuarios.FindAsync(id);
+            if (user == null)
+            {
+                return NotFound(new ErrorResponse { Message = $"Usuario with ID {id} not found.", Detail = "No matching record found in the usuarios table." });
+            }
+
+            // update items
+            user.activo = "activo";
+
+
+            _context.Entry(user).State = EntityState.Modified;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+                return Ok(user);
+            }
+            catch (DbUpdateConcurrencyException dbConEx)
+            {
+                return StatusCode(500, new ErrorResponse { Message = "Database concurrency error", Detail = dbConEx.Message });
+            }
+        }
+
 
 
 

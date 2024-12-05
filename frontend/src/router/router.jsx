@@ -17,19 +17,13 @@ const Path = () => {
         <Route path="/login" element={<LoginUser />} />
 
         {/* //?  Rutas del Elearning . */}
-        <Route path="/auth/client" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/cursos" element={<Cursos />} />
         <Route path="/about" element={<About />} />
         <Route path="/planesPago" element={<PlanesPago />} />
 
-        {/* //?  Rutas del sistema. */}
-        <Route path="/auth/user" element={<LoginUser />} />
-        <Route path="/home" element={<Principal />}></Route>
-        <Route path="/table" element={<Table />}></Route>
-        <Route path="/usuarios" element={<Users />}></Route>
-
         {/* //?  Rutas de la pagina no encontrada. */}
-        <Route
+        {/* <Route
           path="*"
           element={
             <>
@@ -46,7 +40,16 @@ const Path = () => {
               </h1>
             </>
           }
-        ></Route>
+        ></Route> */}
+      </Routes>
+
+      <Routes>
+        {/* //?  Rutas del sistema. */}
+
+        <Route path="/auth/user" element={<LoginUser />} />
+        <Route path="/home" element={<Principal />}></Route>
+        <Route path="/table" element={<Table />}></Route>
+        <Route path="/usuarios" element={<Users />}></Route>
       </Routes>
     </Router>
   );

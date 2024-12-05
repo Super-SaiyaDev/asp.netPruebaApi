@@ -3,17 +3,18 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../css/create.css";
 
-const Create = ({ setModalIsOpen, inputs }) => {
+const Create = ({ setModalIsOpen, inputs, api }) => {
   const navigate = useNavigate();
   const [values, setValues] = useState({});
 
   const handlerSubmit = (e) => {
     e.preventDefault();
+    console.log(values);
     axios
-      .post("http://localhost:3000/api/clientes/", values)
+      .post(api.url, values)
       .then((data) => {
         console.log(data);
-        navigate("/table");
+        navigate("/usuarios");
       })
       .catch((err) => {
         console.log(err);
@@ -30,14 +31,40 @@ const Create = ({ setModalIsOpen, inputs }) => {
           {inputs.map((input, index) => (
             <div className="input-feild-cr" key={index}>
               <label className="label-cr">{input.lblName}</label>
-              <input
-                className="input-cr"
-                type={input.type}
-                required
-                onChange={(e) =>
-                  setValues({ ...values, [input.name]: e.target.value })
-                }
-              />
+              {input.type === "select" ? (
+                <select
+                  className="input-cr"
+                  name={input.name}
+                  onChange={(e) =>
+                    setValues({
+                      ...values,
+                      [input.name]: parseInt(e.target.value, 10),
+                    })
+                  }
+                  required
+                  id={input.name}
+                >
+                  {input.options.map((options, index) => (
+                    <option key={index} value={options.value}>
+                      {options.label}
+                    </option>
+                  ))}
+                </select>
+              ) : (
+                <input
+                  className="input-cr"
+                  id={input.name}
+                  type={input.type}
+                  name={input.name}
+                  required
+                  onChange={(e) =>
+                    setValues({
+                      ...values,
+                      [input.name]: e.target.value,
+                    })
+                  }
+                />
+              )}
             </div>
           ))}
           <div className="btn-cr">
@@ -45,7 +72,7 @@ const Create = ({ setModalIsOpen, inputs }) => {
               crear
             </button>
             <button
-              className="btn-cancel"
+              className="btn-redirect"
               type="button"
               onClick={() => setModalIsOpen(false)}
             >

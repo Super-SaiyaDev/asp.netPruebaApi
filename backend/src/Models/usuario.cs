@@ -1,7 +1,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace usuariosModel.Models
+namespace UsuariosModel.Models
 {
     public class Usuarios
     {
@@ -20,7 +20,7 @@ namespace usuariosModel.Models
         public int role { get; set; }
 
         [MaxLength(15)]
-        public string activo { get; set; } = "activo";
+        public string? activo { get; set; }
 
         public DateTime created_at { get; set; } = DateTime.Now;
     }

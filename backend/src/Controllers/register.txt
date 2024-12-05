@@ -1,0 +1,21 @@
+ [HttpPost("register")]
+        public async Task<IActionResult> Register([FromBody] LoginRequest request)
+        {
+
+            var user = await _context.usuarios
+                .FirstOrDefaultAsync(data => data.Username == request.User && data.Clave == request.Clave);
+
+            if (user != null)
+            {
+                return Conflict(new { success = false, message = "User already exists" });
+            }
+
+            //? if don't alredy exist eny user then will create a new user
+            var newUser = new Usuarios
+            {
+                Username = request.User,
+                Clave = request.Clave,
+            };
+
+
+        }
