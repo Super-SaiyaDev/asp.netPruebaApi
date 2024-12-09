@@ -460,3 +460,4 @@ C:\Users\programacion 28\Documents\GitHub\asp.netPruebaApi\backend\obj\Debug\net
 C:\Users\programacion 28\Documents\GitHub\asp.netPruebaApi\backend\obj\Debug\net8.0\api-elearning.pdb
 C:\Users\programacion 28\Documents\GitHub\asp.netPruebaApi\backend\obj\Debug\net8.0\api-elearning.genruntimeconfig.cache
 C:\Users\programacion 28\Documents\GitHub\asp.netPruebaApi\backend\obj\Debug\net8.0\ref\api-elearning.dll
+C:\Users\LAB 2\Desktop\GitHub\asp.netPruebaApi\backend\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

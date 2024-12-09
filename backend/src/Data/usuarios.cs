@@ -4,6 +4,7 @@ using UsuariosModel.Models;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
+using EstudiantesModel.Models;
 
 namespace usuariosData.Data
 {
@@ -18,6 +19,8 @@ namespace usuariosData.Data
         }
 
         public DbSet<Usuarios> usuarios { get; set; } = null!;
+
+        public DbSet<Estudiantes> estudiantes { get; set; } = null!;
 
         public override int SaveChanges()
         {
