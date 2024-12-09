@@ -9,7 +9,7 @@ const PlanesPago = () => {
   return (
     <>
     <Navbar></Navbar>
-      <section className="my-5">
+      <section className="container">
         <div
           style={{
             display: "flex",
