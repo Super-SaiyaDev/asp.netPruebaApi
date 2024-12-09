@@ -60,9 +60,11 @@ const Cursos = () => {
 
   return (
     <>
-      <Navbar />
+     <div id="navbar">
+        <Navbar />
+      </div>
 
-      <div className="mt-5 wow fadeIn">
+      <div className="container-curso">
         <div className="row">
           <div className="col-md-12 mb-4">
             <h1>Nuestros Cursos</h1>
