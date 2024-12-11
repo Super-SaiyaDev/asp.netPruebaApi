@@ -3,12 +3,13 @@ using System.ComponentModel.DataAnnotations;
 
 namespace EstudiantesModel.Models
 {
-    public class Estudiantes
+    public class Estudiante
     {
         [Key]
         public int Id { get; set; }
 
         public string? Nombre { get; set; }
+
         public string? Apellido { get; set; }
 
         public string? Email { get; set; }
@@ -23,7 +24,7 @@ namespace EstudiantesModel.Models
 
         public string? Direccion { get; set; }
 
-        public string? Nacionalidad{ get; set; }
+        public string? Nacionalidad { get; set; }
 
         public string? FechaNacimiento { get; set; }
 
@@ -34,7 +35,5 @@ namespace EstudiantesModel.Models
         public string? BiblioGrafia { get; set; }
 
         public DateTime UltimaConexion { get; set; } = DateTime.Now;
-
-
     }
 }

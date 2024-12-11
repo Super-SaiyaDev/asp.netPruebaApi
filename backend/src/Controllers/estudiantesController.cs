@@ -13,22 +13,26 @@ namespace EstudiantesControllers.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AuthController : ControllerBase
+    public class AuthClientController : ControllerBase
     {
         private readonly ApiDbContext _context;
         private readonly IConfiguration _configuration;
 
-        public AuthController(ApiDbContext context, IConfiguration configuration)
+        public AuthClientController(ApiDbContext context, IConfiguration configuration)
         {
             _context = context;
             _configuration = configuration;
         }
 
-
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginEstudiantes request)
         {
-            var user = await _context.usuarios
+            if (request.username == null || request.Clave == null)
+            {
+                return BadRequest(new { success = false, message = "Username or password is null" });
+            }
+
+            var user = await _context.estudiantes
                 .FirstOrDefaultAsync(data => data.Username == request.username && data.Clave == request.Clave);
 
             if (user == null)
@@ -36,8 +40,7 @@ namespace EstudiantesControllers.Controllers
                 return Unauthorized(new { success = false, message = "Invalid username or password" });
             }
 
-
-            var token = createToken(user.Username);
+            var token = createToken(user.Username!);
 
             return Ok(new { success = true, token });
         }
@@ -45,31 +48,37 @@ namespace EstudiantesControllers.Controllers
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] RegisterEstudiantes req)
         {
-            var user = await _context.usuarios
+            if (req.Username == null || req.Email == null || req.Clave == null)
+            {
+                return BadRequest(new { success = false, message = "Username, email, or password is null" });
+            }
+
+            var user = await _context.estudiantes
                 .FirstOrDefaultAsync(data => data.Username == req.Username);
+
             if (user != null)
             {
                 return BadRequest(new { success = false, message = "User already exists" });
-
             }
 
-            var newEstudiante= new Estudiantes
+            var newEstudiante = new Estudiante
             {
                 Username = req.Username,
                 Email = req.Email,
                 Clave = req.Clave
             };
+
             _context.estudiantes.Add(newEstudiante);
             await _context.SaveChangesAsync();
 
-            var token = createToken(newEstudiante.Username);
+            var token = createToken(newEstudiante.Username!);
 
-            return Ok(new { succes = true, token});
+            return Ok(new { success = true, token });
         }
 
         private string createToken(string username)
         {
-            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
+            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"] ?? throw new ArgumentNullException("Jwt:Key")));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
             var claims = new[]
@@ -87,7 +96,6 @@ namespace EstudiantesControllers.Controllers
 
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
-
     }
 
     public class LoginEstudiantes
