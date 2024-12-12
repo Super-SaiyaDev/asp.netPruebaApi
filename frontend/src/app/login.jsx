@@ -41,10 +41,11 @@ const LoginUser = () => {
       .then((res) => {
         if (values.clave != "" && values.user != "") {
           console.log(res.data);
-          if (res.data.success) {
+          if (res.data.message === "successful") {
             navigate("/");
           } else {
-            navigate("/login");
+            navigate("/");
+            alert("Usuario o contraseña incorrecta");
           }
         } else {
           alert("rellene todos los campos");

@@ -79,7 +79,7 @@ const Navbar = () => {
               </a>
             </li>
             <li className="nav-item">
-              <a href="#" className="nav-link">
+              <a href="http://localhost:5173/login" className="nav-link">
                 Inicia Sesion
                 <i className="fab fa-github">
                   <FaUser />

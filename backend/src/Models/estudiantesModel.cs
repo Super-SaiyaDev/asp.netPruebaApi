@@ -1,8 +1,10 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EstudiantesModel.Models
 {
+    [Table("estudiante")] 
     public class Estudiante
     {
         [Key]
@@ -20,7 +22,7 @@ namespace EstudiantesModel.Models
 
         public string? Genero { get; set; }
 
-        public string? Telefeno { get; set; }
+        public string? Telefono { get; set; }
 
         public string? Direccion { get; set; }
 
@@ -32,7 +34,7 @@ namespace EstudiantesModel.Models
 
         public string? FotoPerfil { get; set; }
 
-        public string? BiblioGrafia { get; set; }
+        public string? Biografia { get; set; }
 
         public DateTime UltimaConexion { get; set; } = DateTime.Now;
     }

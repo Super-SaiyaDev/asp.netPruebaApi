@@ -8,6 +8,7 @@ import PlanesPago from "../components/planesPago";
 import Principal from "../app/dashboard";
 import Table from "../app/table";
 import Users from "../app/usuarios";
+import CambioRol from "../app/trabajarNosotros";
 
 const Path = () => {
   return (
@@ -21,6 +22,7 @@ const Path = () => {
         <Route path="/cursos" element={<Cursos />} />
         <Route path="/about" element={<About />} />
         <Route path="/planesPago" element={<PlanesPago />} />
+        <Route path="/unete" element={<CambioRol/>}></Route>
 
         {/* //?  Rutas de la pagina no encontrada. */}
         {/* <Route
